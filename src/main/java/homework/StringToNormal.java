@@ -1,4 +1,4 @@
-package home_work;
+package homework;
 
 public class StringToNormal {
     public static void main(String[] args) {
