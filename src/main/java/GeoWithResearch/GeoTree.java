@@ -2,30 +2,34 @@ package GeoWithResearch;
 
 import java.util.ArrayList;
 
-public class GeoTree {
+public class GeoTree implements GeoTreeInterface {
     private ArrayList<Node> tree = new ArrayList<>();
 
+    @Override
+    public void addRelationship(Person person1, Person person2, Relationship relationship) {
+        if (!hasRelationship(person1, person2)) {
+            Node node1 = new Node(person1, relationship, person2);
+            Node node2 = new Node(person2, relationship.getOppositeRelationship(), person1);
+            tree.add(node1);
+            tree.add(node2);
+        }
+    }
+
+    @Override
+    public boolean hasRelationship(Person p1, Person p2) {
+        for (Relationship relationship : Relationship.values()) {
+            Relationship rel = relationship;
+            for (Node node : tree) {
+                if (node.p1.equals(p1) && node.p2.equals(p2) && node.re == rel && p1 != p2) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
     public ArrayList<Node> getTree() {
         return tree;
     }
-
-    public void appendParen(Person parent, Person children) {
-        if (parent != null && children != null) {
-            tree.add(new Node(parent, Relationship.parent, children));
-            tree.add(new Node(children, Relationship.children, parent));
-        }
-    }
-    public void appendGrandparent(Person grandparent, Person grandsons) {
-        if (grandparent != null && grandsons != null) {
-            tree.add(new Node(grandparent, Relationship.grandparent, grandsons));
-            tree.add(new Node(grandsons, Relationship.grandsons, grandparent));
-        }
-    }
-    public void appendAunt(Person aunt, Person nephews) {
-        if (aunt != null && nephews != null) {
-            tree.add(new Node(aunt, Relationship.aunt, nephews));
-            tree.add(new Node(nephews, Relationship.nephews, aunt));
-        }
-    }
-
 }

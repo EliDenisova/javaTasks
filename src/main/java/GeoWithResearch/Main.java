@@ -8,22 +8,25 @@ public class Main {
         Person jane = new Person("Женя", 27);
         Person ivan = new Person("Ваня", 5);
         Person kate = new Person("Катя", 1);
-        GeoTree gt = new GeoTree();
-        gt.appendParen(irina, jane);
-        gt.appendParen(irina, masha);
-        gt.appendParen(vasya, jane);
-        gt.appendParen(vasya, masha);
-        gt.appendParen(jane, ivan);
-        gt.appendParen(masha, kate);
-        gt.appendGrandparent(irina, ivan);
-        gt.appendGrandparent(irina, kate);
-        gt.appendGrandparent(vasya, ivan);
-        gt.appendGrandparent(vasya, kate);
-        gt.appendAunt(jane, kate);
-        gt.appendAunt(masha, ivan);
+        GeoTreeInterface gt = new GeoTree();
+        gt.addRelationship(irina, jane, Relationship.children);
+        gt.addRelationship(irina, masha, Relationship.children);
+        gt.addRelationship(vasya, jane, Relationship.children);
+        gt.addRelationship(vasya, masha, Relationship.children);
+        gt.addRelationship(jane, ivan, Relationship.children);
+        gt.addRelationship(masha, kate, Relationship.children);
+        gt.addRelationship(irina, ivan, Relationship.Grandchild);
+        gt.addRelationship(irina, kate, Relationship.Grandchild);
+        gt.addRelationship(vasya, ivan, Relationship.Grandchild);
+        gt.addRelationship(vasya, kate, Relationship.Grandchild);
+        gt.addRelationship(jane, kate, Relationship.NEPHEW_NIECE);
+        gt.addRelationship(masha, ivan, Relationship.NEPHEW_NIECE);
 
         System.out.println(new Research(gt).spend(vasya,
-                Relationship.grandparent));
+                Relationship.Grandchild));
+
+        System.out.println(new Research(gt).allRelationships(vasya));
+        System.out.println(new Research(gt).findRelationships(vasya, Relationship.children));
     }
 
 }
