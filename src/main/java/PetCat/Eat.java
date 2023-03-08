@@ -1,2 +1,5 @@
-package PetCat;public interface eat {
+package PetCat;
+
+public interface Eat {
+    void eat();
 }

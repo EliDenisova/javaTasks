@@ -1,2 +1,6 @@
-package PetCat;public interface Say {
+package PetCat;
+
+public interface Say {
+
+    void voce();
 }

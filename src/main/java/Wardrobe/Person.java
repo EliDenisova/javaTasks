@@ -1,6 +1,6 @@
 package Wardrobe;
 
-public class Person implements walking, opening{
+public class Person implements Walking, Opening {
     private String name;
 
     public Person(String name) {

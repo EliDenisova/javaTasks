@@ -1,2 +1,5 @@
-package PetCat;public interface ask {
+package PetCat;
+
+public interface Ask {
+    void ask();
 }

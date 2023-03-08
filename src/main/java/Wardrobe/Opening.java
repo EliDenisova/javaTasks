@@ -1,6 +1,6 @@
 package Wardrobe;
 
-public interface opening {
+public interface Opening {
 
     void openDoor();
 }

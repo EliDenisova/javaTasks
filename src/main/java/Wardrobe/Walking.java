@@ -1,5 +1,5 @@
 package Wardrobe;
 
-public interface walking {
+public interface Walking {
     void go();
 }

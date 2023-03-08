@@ -1,4 +1,4 @@
-package GeoWithResearch2;
+package GeoWithResearch;
 
 public class Main {
     public static void main(String[] args) {

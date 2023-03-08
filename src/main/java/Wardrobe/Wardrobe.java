@@ -1,6 +1,6 @@
 package Wardrobe;
 
-public class Wardrobe extends Furniture implements opening{
+public class Wardrobe extends Furniture implements Opening {
     private int doorCount;
     private int height;
 

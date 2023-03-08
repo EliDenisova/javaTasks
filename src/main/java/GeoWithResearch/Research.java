@@ -1,4 +1,4 @@
-package GeoWithResearch2;
+package GeoWithResearch;
 
 import java.util.ArrayList;
 import java.util.Objects;
