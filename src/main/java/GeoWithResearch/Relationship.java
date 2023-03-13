@@ -36,5 +36,7 @@ public enum Relationship {
         }
     };
 
+
+
     public abstract Relationship getOppositeRelationship();
 }

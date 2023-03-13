@@ -18,9 +18,8 @@ public class GeoTree implements GeoTreeInterface {
     @Override
     public boolean hasRelationship(Person p1, Person p2) {
         for (Relationship relationship : Relationship.values()) {
-            Relationship rel = relationship;
             for (Node node : tree) {
-                if (node.p1.equals(p1) && node.p2.equals(p2) && node.re == rel && p1 != p2) {
+                if (node.p1.equals(p1) && node.p2.equals(p2) && node.re == relationship && p1 != p2) {
                     return true;
                 }
             }

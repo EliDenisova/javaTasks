@@ -26,7 +26,7 @@ public class Main {
                 Relationship.Grandchild));
 
         System.out.println(new Research(gt).allRelationships(vasya));
-        System.out.println(new Research(gt).findRelationships(vasya, Relationship.children));
+        System.out.println(new Research(gt).findRelationships(ivan, Relationship.parent));
     }
 
 }

@@ -41,4 +41,26 @@ public class Person implements Eat, Feed, Say{
     public void voce() {
         System.out.println("Приятного аппетита.");
     }
+
+
+    @Override
+    public int hashCode() {
+        int result = 15;
+        result = 31 * result + (name == null ? 0 : name.hashCode());
+        result = 31 * result + petCount;
+
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Person person = (Person) obj;
+        return petCount == person.petCount && name.equals(person.name);
+    }
 }

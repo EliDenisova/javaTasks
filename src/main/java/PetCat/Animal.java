@@ -34,4 +34,27 @@ public abstract class Animal {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public int hashCode() {
+        int result = 15;
+
+        result = 31 * result + (name == null ? 0 : name.hashCode());
+        result = 31 * result + (color == null ? 0 : color.hashCode());
+        result = 31 * result + (size == null ? 0 : size.hashCode());
+
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Animal animal = (Animal) obj;
+        return name.equals(animal.name) && color.equals(animal.color) && size.equals(animal.size);
+    }
 }

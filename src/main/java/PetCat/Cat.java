@@ -20,4 +20,6 @@ public class Cat extends Animal implements Say, Eat, Ask{
     public void voce() {
         System.out.println("говорит: Мур - мур");
     }
+
+
 }

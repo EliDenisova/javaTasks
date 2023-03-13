@@ -15,7 +15,7 @@ public class Research {
         if (tree != null) {
             for (Node t : tree) {
                 if (Objects.equals(t.p1.fullName, p.fullName) && t.re == re) {
-                    result.add(t.p2.fullName);
+                    result.add(t.p2.fullName + " " + t.p2.getAge() + " лет");
                 }
             }
         }
@@ -26,7 +26,7 @@ public class Research {
         ArrayList<String> result = new ArrayList<>();
         for (Node node : tree) {
             if (node.p1.equals(p) && node.re == re) {
-                result.add(node.p2.getFullName());
+                result.add(node.p2.getFullName() + " " + node.p2.getAge() + " лет");
             }
         }
         return result;
@@ -37,7 +37,7 @@ public class Research {
         result.add("Все отношения " + p.getFullName());
         for (Node t : tree) {
             if (t.p1.getFullName().equals(p.getFullName())) {
-                result.add(t.re + ": " + t.p2.getFullName());
+                result.add(t.re + ": " + t.p2.getFullName() + " " + t.p2.getAge() + " лет");
             }
         }
         return result;

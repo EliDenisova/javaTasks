@@ -7,6 +7,7 @@ public interface GeoTreeInterface {
 
     boolean hasRelationship(Person p1, Person p2);
 
+
     ArrayList<Node> getTree();
 
 }
