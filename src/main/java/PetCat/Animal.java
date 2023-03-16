@@ -1,14 +1,26 @@
 package PetCat;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal>{
     private String name;
     private String color;
     private String size;
 
-    public Animal(String name, String color, String size) {
+    private int satiety;
+
+    public Animal(String name, String color, String size, int satiety) {
         this.name = name;
         this.color = color;
         this.size = size;
+        this.satiety = satiety;
+    }
+
+    public int getSatiety() {
+        return satiety;
+    }
+
+    public int setSatiety(int satiety) {
+        this.satiety = satiety;
+        return satiety;
     }
 
     public String getName() {
@@ -56,5 +68,10 @@ public abstract class Animal {
         }
         Animal animal = (Animal) obj;
         return name.equals(animal.name) && color.equals(animal.color) && size.equals(animal.size);
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return this.getSatiety() - o.getSatiety();
     }
 }

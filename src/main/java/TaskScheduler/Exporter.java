@@ -1,4 +1,7 @@
 package TaskScheduler;
+import java.util.List;
 
-public interface Loader {
+public interface Exporter<T extends Task> {
+
+    void export(List<T> task, String FilePath);
 }

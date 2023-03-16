@@ -1,8 +1,8 @@
 package PetCat;
 
 public class Cat extends Animal implements Say, Eat, Ask{
-    public Cat(String name, String color, String size) {
-        super(name, color, size);
+    public Cat(String name, String color, String size, int satiety) {
+        super(name, color, size, satiety);
     }
 
 

@@ -1,2 +1,8 @@
-package TaskScheduler;public class Main {
+package TaskScheduler;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Menu.menu();
+    }
 }

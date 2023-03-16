@@ -1,2 +1,7 @@
-package TaskScheduler;public enum Priority {
+package TaskScheduler;
+
+public enum Priority {
+    LOW,
+    MEDIUM,
+    IMMEDIATE
 }
