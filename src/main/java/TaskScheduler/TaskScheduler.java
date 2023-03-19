@@ -18,8 +18,8 @@ public class TaskScheduler<T extends Task> {
         this.exporter = exporter;
     }
 
-    public void addTask(int id, String aothorName, Priority priority, LocalDateTime creationDateTime, LocalDateTime deadLineDateTime, String description) {
-        T task = (T) new Task(id, aothorName, priority, creationDateTime, deadLineDateTime, description);
+    public void addTask(int id, String authorName, Priority priority, LocalDateTime creationDateTime, LocalDateTime deadLineDateTime, String description) {
+        T task = (T) new Task(id, authorName, priority, creationDateTime, deadLineDateTime, description);
     }
 
     public T getTaskById(int id) {
