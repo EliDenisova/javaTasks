@@ -31,4 +31,9 @@ public class StoringStudentInMemory implements StudentStorage {
         }
         return 0;
     }
+
+    @Override
+    public List<Student> getAllStudent() {
+        return students;
+    }
 }

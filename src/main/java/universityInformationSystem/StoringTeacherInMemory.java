@@ -22,12 +22,10 @@ public class StoringTeacherInMemory implements TeacherStorage {
     }
 
     @Override
-    public Teacher getTeacherBySubject(String subject) {
+    public Teacher getTeacherBySpecialization(Specialization specialization) {
         for (Teacher teacher : teachers) {
-            for (String subject1 : teacher.getSubjects()) {
-                if (subject1.equals(subject)) {
-                    return teacher;
-                }
+            if (teacher.getSpecialization().equals(specialization)) {
+                return teacher;
             }
         }
         return null;
@@ -35,12 +33,12 @@ public class StoringTeacherInMemory implements TeacherStorage {
 
     @Override
     public List<Student> getStudentByTeacher(String teacherName) {
-        for (Teacher teacher : teachers) {
-            if (teacher.getName().equals(teacherName)){
-                return teacher.getStudents();
-            }
-        }
         return null;
+    }
+
+    @Override
+    public List<Teacher> getAllTeacher() {
+        return teachers;
     }
 
 }

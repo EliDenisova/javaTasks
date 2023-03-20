@@ -5,13 +5,13 @@ import java.util.List;
 public class Student extends Person {
     private int courseOfStudy;
 
-    public Student(String name, List<String> subjects, int courseOfStudy) {
-        super(name, subjects);
+    public Student(String name, Specialization specialization, int courseOfStudy) {
+        super(name, specialization);
         this.courseOfStudy = courseOfStudy;
     }
 
-    public Student(String name, int courseOfStudy, List<String> subjects) {
-        super(name, subjects);
+    public Student(String name, int courseOfStudy, Specialization specialization) {
+        super(name, specialization);
         this.courseOfStudy = courseOfStudy;
     }
 
@@ -23,11 +23,4 @@ public class Student extends Person {
         this.courseOfStudy = courseOfStudy;
     }
 
-    public List<String> getSubjects() {
-        return subjects;
-    }
-
-    public void setSubjects(List<String> subjects) {
-        this.subjects = subjects;
-    }
 }

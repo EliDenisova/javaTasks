@@ -1,9 +1,9 @@
 package universityInformationSystem;
 
-public enum Subject {
+public enum Specialization {
     MATHEMATICS,
     ENGLISH,
-    PHYSICS,
+    BIOLOGY,
     LITERATURE,
     CHEMISTRY
 }

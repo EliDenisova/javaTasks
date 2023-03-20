@@ -4,21 +4,19 @@ import java.util.List;
 
 public abstract class Person {
     private String name;
-    private String phoneNumber;
-    private String city;
-    List<String> subjects;
+    Specialization specialization;
 
-    public Person(String name, List<String> subjects) {
+    public Person(String name, Specialization specialization) {
         this.name = name;
-        this.subjects = subjects;
+        this.specialization = specialization;
     }
 
-    public List<String> getSubjects() {
-        return subjects;
+    public Specialization getSpecialization() {
+        return specialization;
     }
 
-    public void setSubjects(List<String> subjects) {
-        this.subjects = subjects;
+    public void setSpecialization(Specialization specialization) {
+        this.specialization = specialization;
     }
 
     public String getName() {

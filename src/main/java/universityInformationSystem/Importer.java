@@ -1,5 +1,9 @@
 package universityInformationSystem;
 
+import java.util.List;
+
 public interface Importer {
-    void importer(String filePath);
+    List<Teacher> importerTeacher(String filePath);
+    List<Student> importerStudent(String filePath);
+
 }
