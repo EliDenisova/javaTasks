@@ -3,7 +3,7 @@ package universityInformationSystem;
 import java.util.List;
 
 public class Teacher extends Person{
-    List<String> students;
+    private List<String> students;
 
     public Teacher(String name, Specialization specialization) {
         super(name, specialization);
