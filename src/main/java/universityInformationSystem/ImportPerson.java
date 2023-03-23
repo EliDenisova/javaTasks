@@ -10,7 +10,7 @@ public class ImportPerson implements Importer{
     @Override
     public List<Teacher> importerTeacher(String filePath) {
         TeacherStorage<Teacher> teacherStorage = new StoringTeacherInMemory();
-        ExporterPerson exporter = new ExportPerson();
+        ExporterTeacher exporter = new ExportTeacher();
         Importer importer = new ImportPerson();
         InformationSystem<Person> informationSystem = new InformationSystem<Person>(teacherStorage, importer, exporter);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
@@ -31,7 +31,7 @@ public class ImportPerson implements Importer{
     @Override
     public List<Student> importerStudent(String filePath) {
         StudentStorage<Student> studentStorage = new StoringStudentInMemory();
-        ExporterPerson exporter = new ExportPerson();
+        ExporterStudent exporter = new ExportStudent();
         Importer importer = new ImportPerson();
         InformationSystem<Person> informationSystem = new InformationSystem<Person>(studentStorage, importer, exporter);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){

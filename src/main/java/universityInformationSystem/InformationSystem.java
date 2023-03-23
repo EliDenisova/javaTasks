@@ -6,18 +6,19 @@ public class InformationSystem <T extends Person>{
     private TeacherStorage teacherStorage;
     private  StudentStorage studentStorage;
     private Importer importer;
-    private ExporterPerson exporter;
+    private ExporterStudent exporterStudent;
+    private ExporterTeacher exporterTeacher;
 
-    public InformationSystem(TeacherStorage teacherStorage, Importer importer, ExporterPerson exporter) {
+    public InformationSystem(TeacherStorage teacherStorage, Importer importer, ExporterTeacher exporter) {
         this.teacherStorage = teacherStorage;
         this.importer = importer;
-        this.exporter = exporter;
+        this.exporterTeacher = exporter;
     }
 
-    public InformationSystem(StudentStorage studentStorage, Importer importer, ExporterPerson exporter) {
+    public InformationSystem(StudentStorage studentStorage, Importer importer, ExporterStudent exporter) {
         this.studentStorage = studentStorage;
         this.importer = importer;
-        this.exporter = exporter;
+        this.exporterStudent = exporter;
     }
 
     List<Teacher> importerTeacher(String filePath){
@@ -29,12 +30,12 @@ public class InformationSystem <T extends Person>{
 
     public void exportTeacher(String filePath) {
         List<Teacher> teachers = teacherStorage.getAllTeacher();
-        exporter.exporterTeacher(teachers ,filePath);
+        exporterTeacher.exporterTeacher(teachers ,filePath);
     }
 
     public void exportStudent(String filePath) {
         List<Student> students = studentStorage.getAllStudent();
-        exporter.exporterStudent(students, filePath);
+        exporterStudent.exporterStudent(students, filePath);
     }
 
     public void addTeacher(String name, Specialization specialization, List<String> student) {
