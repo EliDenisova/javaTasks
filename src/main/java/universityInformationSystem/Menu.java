@@ -18,12 +18,12 @@ public class Menu {
         StoringStudentInMemory storingStudentInMemory = new StoringStudentInMemory();
 
         InformationSystem<Teacher> teacherInformationSystem = new InformationSystem<>(
-                new StoringTeacherInMemory(), new ImportPerson(),
-                new ExportPerson());
+                new StoringTeacherInMemory(), new ImportTeacher(),
+                new ExportTeacher());
 
         InformationSystem<Student> studentInformationSystem = new InformationSystem<>(
-                new StoringTeacherInMemory(), new ImportPerson(),
-                new ExportPerson());
+                new StoringStudentInMemory(), new ImportStudent(),
+                new ExportStudent());
 
         System.out.println("Выберите действие :\n" +
                 "1. Добавить студента.\n" +

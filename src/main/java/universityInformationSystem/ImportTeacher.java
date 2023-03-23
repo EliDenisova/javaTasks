@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
-public class ImportPerson implements Importer{
+public class ImportTeacher implements ImporterTeacher{
     @Override
     public List<Teacher> importerTeacher(String filePath) {
         TeacherStorage<Teacher> teacherStorage = new StoringTeacherInMemory();
         ExporterTeacher exporter = new ExportTeacher();
-        Importer importer = new ImportPerson();
+        ImporterTeacher importer = new ImportTeacher();
         InformationSystem<Person> informationSystem = new InformationSystem<Person>(teacherStorage, importer, exporter);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             String line;
@@ -26,26 +26,5 @@ public class ImportPerson implements Importer{
             throw new RuntimeException(e);
         }
         return (List<Teacher>) teacherStorage;
-    }
-
-    @Override
-    public List<Student> importerStudent(String filePath) {
-        StudentStorage<Student> studentStorage = new StoringStudentInMemory();
-        ExporterStudent exporter = new ExportStudent();
-        Importer importer = new ImportPerson();
-        InformationSystem<Person> informationSystem = new InformationSystem<Person>(studentStorage, importer, exporter);
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                String name = parts[0];
-                Specialization specialization = Specialization.valueOf(parts[1]);
-                int courseOfStudy = Integer.parseInt(parts[2]);
-                studentStorage.add(new Student(name, specialization, courseOfStudy));
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return (List<Student>) studentStorage;
     }
 }

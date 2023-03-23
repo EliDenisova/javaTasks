@@ -5,27 +5,28 @@ import java.util.List;
 public class InformationSystem <T extends Person>{
     private TeacherStorage teacherStorage;
     private  StudentStorage studentStorage;
-    private Importer importer;
+    private ImporterStudent importerStudent;
+    private ImporterTeacher importerTeacher;
     private ExporterStudent exporterStudent;
     private ExporterTeacher exporterTeacher;
 
-    public InformationSystem(TeacherStorage teacherStorage, Importer importer, ExporterTeacher exporter) {
+    public InformationSystem(TeacherStorage teacherStorage, ImporterTeacher importerTeacher, ExporterTeacher exporter) {
         this.teacherStorage = teacherStorage;
-        this.importer = importer;
+        this.importerTeacher = importerTeacher;
         this.exporterTeacher = exporter;
     }
 
-    public InformationSystem(StudentStorage studentStorage, Importer importer, ExporterStudent exporter) {
+    public InformationSystem(StudentStorage studentStorage, ImporterStudent importerStudent, ExporterStudent exporter) {
         this.studentStorage = studentStorage;
-        this.importer = importer;
+        this.importerStudent = importerStudent;
         this.exporterStudent = exporter;
     }
 
     List<Teacher> importerTeacher(String filePath){
-        return importer.importerTeacher(filePath);
+        return importerTeacher.importerTeacher(filePath);
     }
     List<Student> importerStudent(String filePath) {
-        return importer.importerStudent(filePath);
+        return importerStudent.importerStudent(filePath);
     }
 
     public void exportTeacher(String filePath) {
