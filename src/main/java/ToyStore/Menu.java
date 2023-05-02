@@ -23,7 +23,7 @@ public class Menu {
 
         while(true) {
             while(true) {
-                System.out.println("Меню:");
+
                 System.out.println("1. Добавить новую игрушку в розыгрыш");
                 System.out.println("2. Изменить вес вероятности выигрыша");
                 System.out.println("3. Начать розыгрыш");
